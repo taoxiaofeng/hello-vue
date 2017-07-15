@@ -18,10 +18,15 @@
 		<p v-if="seen">现在你看到我了</p>
 	</div> -->
 	<!-- 绑定数组渲染项目列表 -->
-	<div id="app-4">
+	<!-- <div id="app-4">
 		<ol>
 			<li v-for="todo in todos">{{ todo.text }}</li>
 		</ol>
+	</div> -->
+	<!-- 处理用户输入 -->
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">逆转消息</button>
 	</div>
 
 	<script>
@@ -49,17 +54,29 @@
 	// });
 	// 绑定数组渲染项目列表
 	
-	var app4 = new Vue({
-		el:'#app-4',
-		data:{
-			todos:[
-				{text:'学习javascript'},
-				{text:'学习vue'},
-				{text:'整个牛项目'}
-			]
-		}
-	});
+	// var app4 = new Vue({
+	// 	el:'#app-4',
+	// 	data:{
+	// 		todos:[
+	// 			{text:'学习javascript'},
+	// 			{text:'学习vue'},
+	// 			{text:'整个牛项目'}
+	// 		]
+	// 	}
+	// });
 	//在控制台里，输入 app4.todos.push({ text: '新项目' })，你会发现列表中添加了一个新项。
+	// 处理用户输入
+	var app5 = new Vue({
+	  el: '#app-5',
+	  data: {
+	    message: 'Hello Vue.js!'
+	  },
+	  methods: {
+	    reverseMessage: function () {
+	      this.message = this.message.split('').reverse().join('')
+	    }
+	  }
+	})
 	</script>
 	
 </body>
